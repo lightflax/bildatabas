@@ -38,7 +38,7 @@ router.delete("/:id", function (req, res, next) {
 });
 
 /* -------------------UPDATE-------------------- */
-/* const query = {brand: "cadilac"} */
+
 router.get("/:id", function (req, res, next) {
   BilModel.findOneAndUpdate(/* query, {brand: 'tokbil'}, */ req.params.id, req.body, function (err, update) {
     if (err) return next(err);
