@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
-
 var BilSchema = new mongoose.Schema(
+
   {
     reg: String,
     color: String,
