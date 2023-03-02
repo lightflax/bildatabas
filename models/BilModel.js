@@ -6,8 +6,8 @@ var BilSchema = new mongoose.Schema(
     color: String,
     brand: String,
     model: String,
-    pris: String,
-    artal: String,
+    price: String,
+    year: String,
   },
   {
     collection: "bilar"
