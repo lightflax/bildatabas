@@ -22,7 +22,7 @@ router.get("/", function (req, res, next) {
 module.exports = router;
 
 /* -------------------POST-------------------- */
-router.post("/post", function (req, res, next) {
+router.post("/", function (req, res, next) {
   //req.body är innehållet i requestobjektet, dvs en json med en bil
   BilModel.create(req.body, function (err, post) {
     if (err) return next(err);
