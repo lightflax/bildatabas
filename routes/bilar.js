@@ -47,12 +47,14 @@ router.delete("/:id", function (req, res, next) {
 });
  */
 
-router.put("/:id", function (req, res, next) {
-  BilModel.findOneAndUpdate(req.params.id, req.body, function (err, update) {
+/* UPDATE PRODUCT */
+
+router.put('/:id', function(req, res, next) {
+  BilModel.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
-    res.json(update);
+    res.json(post);
   });
-});
+ });
 
 
 
