@@ -46,12 +46,13 @@ router.delete("/:id", function (req, res, next) {
   });
 });
  */
-/* New update */
 
-router.put("/:id", (req, res) => {
-  let updates = req.body //we set a variable equal to the entire req.body
+router.put("/:id", function (req, res, next) {
+  BilModel.findOneAndUpdate(req.params.id, req.body, function (err, update) {
+    if (err) return next(err);
+    res.json(update);
+  });
+});
 
-  BilModel.findOneAndUpdate({ _id: req.params.id }, updates, { new: true })
-    .then(updatedBilModel => res.json(updatedBilModel))
-    .catch(err => res.status(400).json("Error: " + err))
-})
+
+
