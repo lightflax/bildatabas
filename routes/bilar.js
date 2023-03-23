@@ -39,9 +39,19 @@ router.delete("/:id", function (req, res, next) {
 
 /* -------------------UPDATE-------------------- */
 
-router.get("/:id", function (req, res, next) {
-  BilModel.findOneAndUpdate(/* query, {brand: 'tokbil'}, */ req.params.id, req.body, function (err, update) {
+/* router.update("/:id", function (req, res, next) {
+  BilModel.findOneAndUpdate(req.params.id, req.body, function (err, update) {
     if (err) return next(err);
     res.json(update);
   });
 });
+ */
+/* New update */
+
+router.put("/:id/update", (req, res) => {
+  let updates = req.body //we set a variable equal to the entire req.body
+
+  BilModel.findOneAndUpdate({ _id: req.params.id }, updates, { new: true })
+    .then(updatedBilModel => res.json(updatedBilModel))
+    .catch(err => res.status(400).json("Error: " + err))
+})
