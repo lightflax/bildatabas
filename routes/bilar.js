@@ -48,7 +48,7 @@ router.delete("/:id", function (req, res, next) {
  */
 /* New update */
 
-router.put("/:id/update", (req, res) => {
+router.put("/:id", (req, res) => {
   let updates = req.body //we set a variable equal to the entire req.body
 
   BilModel.findOneAndUpdate({ _id: req.params.id }, updates, { new: true })
