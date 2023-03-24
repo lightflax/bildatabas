@@ -49,7 +49,7 @@ router.delete("/:id", function (req, res, next) {
 
 /* UPDATE PRODUCT */
 
-router.put('/', function(req, res, next) {
+router.get('/', function(req, res, next) {
   BilModel.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
