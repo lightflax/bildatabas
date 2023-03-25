@@ -43,8 +43,8 @@ router.delete("/:id", function (req, res, next) {
 
 
 router.put("/", function (req, res, next) {
-  BilModel.findByIdAndUpdate(req.params.id, req.body,  function (err, post) {
+  BilModel.findByIdAndUpdate(req.params.id, req.body,  function (err, put) {
     if (err) return next(err);
-    res.json(post);
+    res.json(put);
   });
 });
