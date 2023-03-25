@@ -40,12 +40,12 @@ router.delete("/:id", function (req, res, next) {
 
 /* UPDATE PRODUCT */
 
-router.put('/:id', function(req, res, next) {
-  BilModel.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, post) {
+
+
+ router.put("/", function (req, res, next) {
+  //req.body är innehållet i requestobjektet, dvs en json med en bil
+  BilModel.findByIdAndUpdate(id,req.body, function (err, data) {
     if (err) return next(err);
-    res.json(post);
+    res.json(data); //Här skickar vi tillbaka datan vi skickar in i databasen, om skrivningen gick bra
   });
- });
-
-
-
+});
