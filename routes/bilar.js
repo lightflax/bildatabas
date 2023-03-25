@@ -42,8 +42,8 @@ router.delete("/:id", function (req, res, next) {
 
 
 
-router.put("/",function (req, res, next) {
-  BilModel.findByIdAndRemove(id, req.body,  function (err, post) {
+router.put("/:id",function (req, res, next) {
+  BilModel.findByIdAndRemove(req.body,  function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
