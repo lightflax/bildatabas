@@ -37,15 +37,6 @@ router.delete("/:id", function (req, res, next) {
   });
 });
 
-/* -------------------UPDATE-------------------- */
-
-/* router.update("/:id", function (req, res, next) {
-  BilModel.findOneAndUpdate(req.params.id, req.body, function (err, update) {
-    if (err) return next(err);
-    res.json(update);
-  });
-});
- */
 
 /* UPDATE PRODUCT */
 
