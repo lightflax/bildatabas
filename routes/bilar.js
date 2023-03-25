@@ -42,10 +42,10 @@ router.delete("/:id", function (req, res, next) {
 
 
 
-router.put("/bilar",function (req, res, next) {
-  BilModel.findByIdAndRemove(req.body,  function (err, post) {
+router.put("/", function (req, res, next) {
+  //req.body är innehållet i requestobjektet, dvs en json med en bil
+  BilModel.findByIdAndUpdate(req.body, function (err, post) {
     if (err) return next(err);
-    res.json(post);
+    res.json(post); //Här skickar vi tillbaka datan vi skickar in i databasen, om skrivningen gick bra
   });
-  res.json(req.user)
-})
+});
